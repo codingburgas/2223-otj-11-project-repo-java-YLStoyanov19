@@ -8,15 +8,15 @@ public class ChessMenuGUI extends JFrame {
     private JMenuItem playerVsPlayerMenuItem;
 
     public ChessMenuGUI() {
-        setTitle("Chess Menu");
-        setSize(300, 200);
+        setTitle("Chess");
+        setSize(2020, 1080);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // Create menu bar
         JMenuBar menuBar = new JMenuBar();
 
         // Create "File" menu
-        JMenu fileMenu = new JMenu("File");
+        JMenu fileMenu = new JMenu("Profile");
 
         // Create "History and Rules of Chess" menu item
         historyAndRulesMenuItem = new JMenuItem("History and Rules of Chess");

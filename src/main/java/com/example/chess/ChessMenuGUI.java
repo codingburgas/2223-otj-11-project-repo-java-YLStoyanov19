@@ -1,6 +1,7 @@
 package com.example.chess;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class ChessMenuGUI extends JFrame {
 
@@ -60,7 +61,13 @@ public class ChessMenuGUI extends JFrame {
                 + "5. The game ends when a player checkmates the opponent's king, stalemates the opponent's king, or the game is a draw due to a threefold repetition, insufficient material, or a draw offer.\n\n"
                 + "Have fun playing Chess!";
 
-        JOptionPane.showMessageDialog(this, historyAndRules);
+        JTextArea historyAndRulesTextArea = new JTextArea(historyAndRules);
+        historyAndRulesTextArea.setEditable(false);
+        historyAndRulesTextArea.setLineWrap(true);
+        historyAndRulesTextArea.setWrapStyleWord(true);
+        JScrollPane scrollPane = new JScrollPane(historyAndRulesTextArea);
+        scrollPane.setPreferredSize(new Dimension(600, 400));
+        JOptionPane   .showMessageDialog(this, scrollPane, "History and Rules of Chess", JOptionPane.INFORMATION_MESSAGE);
     }
 
     private void startPlayerVsPlayerGame() {

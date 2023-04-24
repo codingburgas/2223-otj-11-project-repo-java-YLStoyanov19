@@ -66,8 +66,9 @@ public class ChessMenuGUI extends JFrame {
         historyAndRulesTextArea.setLineWrap(true);
         historyAndRulesTextArea.setWrapStyleWord(true);
         JScrollPane scrollPane = new JScrollPane(historyAndRulesTextArea);
-        scrollPane.setPreferredSize(new Dimension(600, 400));
+        scrollPane.setPreferredSize(new Dimension(1280, 720));
         JOptionPane   .showMessageDialog(this, scrollPane, "History and Rules of Chess", JOptionPane.INFORMATION_MESSAGE);
+
     }
 
     private void startPlayerVsPlayerGame() {

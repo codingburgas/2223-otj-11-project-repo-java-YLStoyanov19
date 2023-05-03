@@ -69,7 +69,7 @@ public class ChessMenuGUI extends JFrame {
                 "\n" +
                 "Chess has a rich and diverse community with players of all ages, genders, and skill levels. There are numerous chess clubs, organizations, and online platforms where players can compete, learn, and socialize. Chess is also recognized as a sport by many international organizations, and it has its own system of ratings to rank players' performance.\n" +
                 "\n" +
-                "One of the most prestigious events in the chess world is the World Chess Championship, where the top players from around the world compete for the title of the world champion. The championship match is typically held every two years, and it is governed by FIDE (Fédération Internationale des Échecs), the international chess federation.\n" +
+                "One of the most prestigious events in the chess world is the World Chess Championship, where the top players from around the world compete for the title of the world champion. The championship match is typically held every two years, and it is governed by FIDE (Federation Internationale des Échecs), the international chess federation.\n" +
                 "\n" +
                 "Chess has also seen significant advancements in technology in recent years. Computer chess programs, also known as chess engines, have become incredibly powerful and are capable of defeating even the strongest human players. These engines use complex algorithms and artificial intelligence techniques to analyze millions of moves per second and make optimal decisions. Computer-assisted chess, where human players use chess engines to analyze positions and suggest moves, has become a popular training tool for players of all levels.";
 

@@ -28,18 +28,18 @@ public class LoginRegisterGUI extends JFrame implements ActionListener {
         JButton loginButton = new JButton("Login");
 
         // Create components for registration form
-        JLabel newUsernameLabel = new JLabel("New username:");
+        JLabel newUsernameLabel = new JLabel("Username:");
         JTextField newUsernameField = new JTextField();
         JLabel newEmailLabel = new JLabel("Email:");
         JTextField newEmailField = new JTextField();
-        JLabel newPasswordLabel = new JLabel("New password:");
+        JLabel newPasswordLabel = new JLabel("Password:");
         JPasswordField newPasswordField = new JPasswordField();
         JLabel confirmPasswordRegisterLabel = new JLabel("Confirm Password:");
         JPasswordField confirmPasswordRegisterField = new JPasswordField();
         JLabel ageLabel = new JLabel("Age:");
         JTextField ageField = new JTextField();
         JLabel genderLabel = new JLabel("Gender:");
-        String[] genderOptions = {"Male", "Female", "Other"};
+        String[] genderOptions = {"Male", "Female"};
         JComboBox<String> genderComboBox = new JComboBox<>(genderOptions);
         JButton registerButton = new JButton("Register");
 
@@ -93,7 +93,7 @@ public class LoginRegisterGUI extends JFrame implements ActionListener {
 
             // Check if email is valid
             if (!email.contains("@")) {
-                JOptionPane.showMessageDialog(this, "Invalid email format");
+                JOptionPane.showMessageDialog(this, "Invalid email address");
                 return;
             }
 
@@ -106,9 +106,10 @@ public class LoginRegisterGUI extends JFrame implements ActionListener {
             String password = new String(passwordField.getPassword());
             String confirmPassword = new String(confirmPasswordField.getPassword());
 
+
             // Check if email is valid
             if (!email.contains("@")) {
-                JOptionPane.showMessageDialog(this, "Invalid email format");
+                JOptionPane.showMessageDialog(this, "Invalid email address");
                 return;
             }
 

@@ -8,9 +8,14 @@ public class ChessMenuGUI extends JFrame {
     public ChessMenuGUI() {
         setTitle("Chess");
         setSize(2020, 1080);
+        JFrame f = new JFrame();
         // Center window on screen
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        ImageIcon backgroundImage = new ImageIcon("C:\\Users\\YLStoyanov19\\IdeaProjects\\2223-otj-11-project-repo-java-YLStoyanov19\\Images\\Chess_Logo\\fischer.png");
+        JLabel backgroundLabel = new JLabel(backgroundImage);
+        backgroundLabel.setLayout(new BorderLayout());
 
         // Create menu bar
         JMenuBar menuBar = new JMenuBar();
@@ -40,6 +45,8 @@ public class ChessMenuGUI extends JFrame {
 
         // Set menu bar for the frame
         setJMenuBar(menuBar);
+
+        setContentPane(backgroundLabel);
 
         // Add action listeners for menu items
         historyAndRulesMenuItem.addActionListener(e -> showHistoryAndRules());

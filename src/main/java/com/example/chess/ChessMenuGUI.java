@@ -23,24 +23,30 @@ public class ChessMenuGUI extends JFrame {
         JMenu fileMenu = new JMenu("Learn Chess");
 
         // Create "History and Rules of Chess" menu item
-        JMenuItem historyAndRulesMenuItem = new JMenuItem("History and Rules of Chess");
+        JMenuItem historyAndRulesMenuItem = new JMenuItem(" History and Rules of Chess ");
         fileMenu.add(historyAndRulesMenuItem);
 
         // Create "Play" menu
-        JMenu playMenu = new JMenu("Play");
+        JMenu playMenu = new JMenu(" Play ");
 
         // Create "Play with AI" menu item
-        JMenuItem playWithAIMenuItem = new JMenuItem("Player versus AI");
+        JMenuItem playWithAIMenuItem = new JMenuItem(" Player versus AI ");
         playMenu.add(playWithAIMenuItem);
 
         // Create "Player versus Player" menu item
-        JMenuItem playerVsPlayerMenuItem = new JMenuItem("Player versus Player");
+        JMenuItem playerVsPlayerMenuItem = new JMenuItem(" Player versus Player ");
         playMenu.add(playerVsPlayerMenuItem);
 
+        JMenu loginMenu = new JMenu(" Authentication ");
 
-        // Add "File" and "Play" menus to menu bar
+        // Create "Login Register" menu item
+        JMenuItem loginAndRegister = new JMenuItem(" Login / Register ");
+        loginMenu.add(loginAndRegister);
+
+        // Add "File" and "Play" and "Auth" menus to menu bar
         menuBar.add(fileMenu);
         menuBar.add(playMenu);
+        menuBar.add(loginMenu);
 
         // Set menu bar for the frame
         setJMenuBar(menuBar);
@@ -51,6 +57,7 @@ public class ChessMenuGUI extends JFrame {
         historyAndRulesMenuItem.addActionListener(e -> showHistoryAndRules());
         playWithAIMenuItem.addActionListener(e -> startGameWithAI());
         playerVsPlayerMenuItem.addActionListener(e -> startPlayerVsPlayerGame());
+        loginAndRegister.addActionListener(e -> openLoginRegister());
     }
 
     private void startGameWithAI() {
@@ -58,6 +65,18 @@ public class ChessMenuGUI extends JFrame {
         JFrame frame = new ChessGameBoard();
 
         // Center window on screen
+        setLocationRelativeTo(null);
+
+        frame.setDefaultCloseOperation(DISPOSE_ON_CLOSE );
+        frame.pack();
+        frame.setResizable(true);
+        frame.setLocationRelativeTo( null );
+        frame.setVisible(true);
+    }
+
+    private void openLoginRegister() {
+        JFrame frame = new LoginRegisterGUI(null);
+
         setLocationRelativeTo(null);
 
         frame.setDefaultCloseOperation(DISPOSE_ON_CLOSE );

@@ -1,6 +1,6 @@
 # 2223-10: On the job training (OTJ) project - Chess Model
 <p align="center">
-<img src = "/Images/Chess_Logo/Chess_Logo.png">
+<img src = "/Images/Chess_Logo/figure.png">
 </p>
 <hr>
 
@@ -23,4 +23,4 @@
 
 **[Presentation](Documents/Presentation.pptx)**
 <br><br>
-**[Documentation](Documentation/Documentation.docx)** 
+**[Documentation](Documents/Documentation.docx)** 

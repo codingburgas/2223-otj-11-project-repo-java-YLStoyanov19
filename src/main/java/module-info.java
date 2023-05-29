@@ -11,6 +11,7 @@ module com.example.chess {
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
     requires java.desktop;
+    requires java.sql;
 
     opens com.example.chess to javafx.fxml;
     exports com.example.chess;

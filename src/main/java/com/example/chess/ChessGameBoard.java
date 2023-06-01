@@ -2,16 +2,20 @@ package com.example.chess;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseMotionListener;
+import java.awt.event.*;
 
-public class ChessGameBoard extends JFrame implements MouseListener, MouseMotionListener {
+public class ChessGameBoard extends JFrame implements MouseListener, KeyListener {
     JLayeredPane layeredPane;
     JPanel chessBoard;
     JLabel chessPiece;
     int xAdjustment;
     int yAdjustment;
+    int startX;
+    int startY;
+    int endX;
+    int endY;
+    boolean drawLines;
+    Color outlineColor;
 
     public ChessGameBoard() {
         Dimension boardSize = new Dimension(600, 600);
@@ -20,11 +24,19 @@ public class ChessGameBoard extends JFrame implements MouseListener, MouseMotion
         getContentPane().add(layeredPane);
         layeredPane.setPreferredSize(boardSize);
         layeredPane.addMouseListener(this);
-        layeredPane.addMouseMotionListener(this);
+        layeredPane.addKeyListener(this);
+        layeredPane.setFocusable(true);
 
         // Add a chess board to the Layered Pane
 
-        chessBoard = new JPanel();
+        chessBoard = new JPanel() {
+            @Override
+            protected void paintComponent(Graphics g) {
+                super.paintComponent(g);
+                g.setColor(outlineColor);
+                g.drawRect(0, 0, getWidth() - 1, getHeight() - 1);
+            }
+        };
         layeredPane.add(chessBoard, JLayeredPane.DEFAULT_LAYER);
         chessBoard.setLayout(new GridLayout(8, 8));
         chessBoard.setPreferredSize(boardSize);
@@ -52,6 +64,9 @@ public class ChessGameBoard extends JFrame implements MouseListener, MouseMotion
         addPieceToSquare(chess1Icon, 15);
         addPieceToSquare(kingIcon, 16);
         addPieceToSquare(camelIcon, 20);
+
+        drawLines = true;
+        outlineColor = Color.GREEN;
     }
 
     private void addPieceToSquare(ImageIcon icon, int squareIndex) {
@@ -73,36 +88,55 @@ public class ChessGameBoard extends JFrame implements MouseListener, MouseMotion
 
     @Override
     public void mouseClicked(MouseEvent e) {
-
+        // Not used
     }
 
     @Override
     public void mousePressed(MouseEvent e) {
-
+        if (e.getButton() == MouseEvent.BUTTON3) {
+            startX = e.getX();
+            startY = e.getY();
+        }
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
-
+        if (e.getButton() == MouseEvent.BUTTON3 && drawLines) {
+            endX = e.getX();
+            endY = e.getY();
+            Graphics g = chessBoard.getGraphics();
+            g.setColor(Color.GREEN);
+            g.drawLine(startX, startY, endX, endY);
+        }
     }
 
     @Override
     public void mouseEntered(MouseEvent e) {
-
+        // Not used
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
-
+        // Optionally, clear the starting coordinates when the mouse exits the board
+        startX = 0;
+        startY = 0;
     }
 
     @Override
-    public void mouseDragged(MouseEvent e) {
-
+    public void keyPressed(KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_SPACE) {
+            chessBoard.getGraphics().clearRect(0, 0, chessBoard.getWidth(), chessBoard.getHeight());
+            drawLines = false;
+        }
     }
 
     @Override
-    public void mouseMoved(MouseEvent e) {
+    public void keyReleased(KeyEvent e) {
+        // Not used
+    }
 
+    @Override
+    public void keyTyped(KeyEvent e) {
+        // Not used
     }
 }

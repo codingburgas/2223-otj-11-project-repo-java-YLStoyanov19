@@ -18,7 +18,7 @@ public class ChessGameBoard extends JFrame implements MouseListener, KeyListener
     Color outlineColor;
 
     public ChessGameBoard() {
-        Dimension boardSize = new Dimension(600, 600);
+        Dimension boardSize = new Dimension(680, 680);
 
         layeredPane = new JLayeredPane();
         getContentPane().add(layeredPane);
@@ -53,21 +53,83 @@ public class ChessGameBoard extends JFrame implements MouseListener, KeyListener
                 square.setBackground(i % 2 == 0 ? Color.darkGray : Color.white);
         }
 
-        // Add a few pieces to the board
+        // The chess pieces added as photos
+        ImageIcon chessWhitePawn = new ImageIcon("C:\\Users\\YLStoyanov19\\IdeaProjects\\2223-otj-11-project-repo-java-YLStoyanov19\\Images\\Chess_Pieces\\white_p.png");
+        ImageIcon chessBlackPawn = new ImageIcon("C:\\Users\\YLStoyanov19\\IdeaProjects\\2223-otj-11-project-repo-java-YLStoyanov19\\Images\\Chess_Pieces\\black_p.png");
+        ImageIcon chessWhiteRook = new ImageIcon("C:\\Users\\YLStoyanov19\\IdeaProjects\\2223-otj-11-project-repo-java-YLStoyanov19\\Images\\Chess_Pieces\\white_r.png");
+        ImageIcon chessBlackRook = new ImageIcon("C:\\Users\\YLStoyanov19\\IdeaProjects\\2223-otj-11-project-repo-java-YLStoyanov19\\Images\\Chess_Pieces\\black_r.png");
+        ImageIcon chessWhiteKnight = new ImageIcon("C:\\Users\\YLStoyanov19\\IdeaProjects\\2223-otj-11-project-repo-java-YLStoyanov19\\Images\\Chess_Pieces\\white_kn.png");
+        ImageIcon chessBlackKnight = new ImageIcon("C:\\Users\\YLStoyanov19\\IdeaProjects\\2223-otj-11-project-repo-java-YLStoyanov19\\Images\\Chess_Pieces\\black_kn.png");
+        ImageIcon chessWhiteBishop = new ImageIcon("C:\\Users\\YLStoyanov19\\IdeaProjects\\2223-otj-11-project-repo-java-YLStoyanov19\\Images\\Chess_Pieces\\white_b.png");
+        ImageIcon chessBlackBishop = new ImageIcon("C:\\Users\\YLStoyanov19\\IdeaProjects\\2223-otj-11-project-repo-java-YLStoyanov19\\Images\\Chess_Pieces\\black_b.png");
+        ImageIcon chessWhiteQueen = new ImageIcon("C:\\Users\\YLStoyanov19\\IdeaProjects\\2223-otj-11-project-repo-java-YLStoyanov19\\Images\\Chess_Pieces\\white_q.png");
+        ImageIcon chessBlackQueen = new ImageIcon("C:\\Users\\YLStoyanov19\\IdeaProjects\\2223-otj-11-project-repo-java-YLStoyanov19\\Images\\Chess_Pieces\\black_q.png");
+        ImageIcon chessWhiteKing = new ImageIcon("C:\\Users\\YLStoyanov19\\IdeaProjects\\2223-otj-11-project-repo-java-YLStoyanov19\\Images\\Chess_Pieces\\white_k.png");
+        ImageIcon chessBlackKing = new ImageIcon("C:\\Users\\YLStoyanov19\\IdeaProjects\\2223-otj-11-project-repo-java-YLStoyanov19\\Images\\Chess_Pieces\\black_k.png");
 
-        ImageIcon chessIcon = new ImageIcon("C:\\Users\\YLStoyanov19\\IdeaProjects\\2223-otj-11-project-repo-java-YLStoyanov19\\Images\\Chess_Pieces\\black.png");
-        ImageIcon chess1Icon = new ImageIcon("/home/vinod/resamples/chess1.jpg");
-        ImageIcon kingIcon = new ImageIcon("/home/vinod/resamples/king.jpg");
-        ImageIcon camelIcon = new ImageIcon("/home/vinod/resamples/camel.jpg");
 
-        addPieceToSquare(chessIcon, 0);
-        addPieceToSquare(chess1Icon, 15);
-        addPieceToSquare(kingIcon, 16);
-        addPieceToSquare(camelIcon, 20);
+        //white chess pawns
+        addPieceToSquare(chessWhitePawn, 48);
+        addPieceToSquare(chessWhitePawn, 49);
+        addPieceToSquare(chessWhitePawn, 50);
+        addPieceToSquare(chessWhitePawn, 51);
+        addPieceToSquare(chessWhitePawn, 52);
+        addPieceToSquare(chessWhitePawn, 53);
+        addPieceToSquare(chessWhitePawn, 54);
+        addPieceToSquare(chessWhitePawn, 55);
+
+        //Black chess pawn
+        addPieceToSquare(chessBlackPawn, 8);
+        addPieceToSquare(chessBlackPawn, 9);
+        addPieceToSquare(chessBlackPawn, 10);
+        addPieceToSquare(chessBlackPawn, 11);
+        addPieceToSquare(chessBlackPawn, 12);
+        addPieceToSquare(chessBlackPawn, 13);
+        addPieceToSquare(chessBlackPawn, 14);
+        addPieceToSquare(chessBlackPawn, 15);
+
+        //White chess Rooks
+        addPieceToSquare(chessWhiteRook, 56);
+        addPieceToSquare(chessWhiteRook, 63);
+
+        //Black chess Rooks
+        addPieceToSquare(chessBlackRook, 0);
+        addPieceToSquare(chessBlackRook, 7);
+
+        //White chess Knights
+        addPieceToSquare(chessWhiteKnight, 57);
+        addPieceToSquare(chessWhiteKnight, 62);
+
+        //Black chess Knights
+        addPieceToSquare(chessBlackKnight, 1);
+        addPieceToSquare(chessBlackKnight, 6);
+
+        //White chess Bishops
+        addPieceToSquare(chessWhiteBishop, 58);
+        addPieceToSquare(chessWhiteBishop, 61);
+
+        //Black chess Bishops
+        addPieceToSquare(chessBlackBishop, 2);
+        addPieceToSquare(chessBlackBishop, 5);
+
+        //White chess Queen
+        addPieceToSquare(chessWhiteQueen, 59);
+
+        //Black chess Queen
+        addPieceToSquare(chessBlackQueen, 3);
+
+        //White chess King
+        addPieceToSquare(chessWhiteKing, 60);
+
+        //Black chess King
+        addPieceToSquare(chessBlackKing, 4);
+
 
         drawLines = true;
         outlineColor = Color.GREEN;
     }
+
+
 
     private void addPieceToSquare(ImageIcon icon, int squareIndex) {
         JLabel piece = new JLabel(icon);
@@ -138,5 +200,7 @@ public class ChessGameBoard extends JFrame implements MouseListener, KeyListener
     @Override
     public void keyTyped(KeyEvent e) {
         // Not used
+
+
     }
 }

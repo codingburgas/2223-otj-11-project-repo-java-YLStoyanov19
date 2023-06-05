@@ -15,7 +15,7 @@
 
 - Yanislav Stoyanov (YLStoyanov19) 
 
-# Resume of the poject 💻 <a name = "resume"></a>
+# Resume of the project 💻 <a name = "resume"></a>
 
 - Java based project, The Chess Model is an application that aims to introduce users to what a particular chess program might look like, it can present training and an opportunity to improve their chess skills.
 

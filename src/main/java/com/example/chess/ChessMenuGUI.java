@@ -1,5 +1,4 @@
 package com.example.chess;
-
 import javax.swing.*;
 import java.awt.*;
 
@@ -43,10 +42,17 @@ public class ChessMenuGUI extends JFrame {
         JMenuItem loginAndRegister = new JMenuItem(" Login / Register ");
         loginMenu.add(loginAndRegister);
 
+        JMenu aboutUsMenu = new JMenu(" About Us ");
+        JMenuItem aboutUsMenuItem = new JMenuItem(" About Us ");
+        aboutUsMenu.add(aboutUsMenuItem);
+
+
         // Add "File" and "Play" and "Auth" menus to menu bar
         menuBar.add(fileMenu);
         menuBar.add(playMenu);
         menuBar.add(loginMenu);
+        menuBar.add(aboutUsMenu);
+
 
         // Set menu bar for the frame
         setJMenuBar(menuBar);
@@ -58,6 +64,8 @@ public class ChessMenuGUI extends JFrame {
         playWithAIMenuItem.addActionListener(e -> startGameWithAI());
         playerVsPlayerMenuItem.addActionListener(e -> startPlayerVsPlayerGame());
         loginAndRegister.addActionListener(e -> openLoginRegister());
+        aboutUsMenuItem.addActionListener(e -> showAboutUs());
+
     }
 
     private void startGameWithAI() {
@@ -130,6 +138,30 @@ public class ChessMenuGUI extends JFrame {
         frame.setResizable(true);
         frame.setLocationRelativeTo( null );
         frame.setVisible(true);
+    }
+
+    private void showAboutUs() {
+        // Display information about a random person and a picture
+        String personName = "Hello, I am Yanislav Stoyanov and I am the developer of this Java application."; //Name of the creator
+        String personInfo = "Contact:     E-mail:   YLStoyanov19@codingburgas.bg   /   Mobile:   0884878281"; // Information about the developer
+        ImageIcon personImage = new ImageIcon("C:\\Users\\YLStoyanov19\\IdeaProjects\\2223-otj-11-project-repo-java-YLStoyanov19\\Images\\Personal_Photo\\Yanislav.jfif"); // Path to the image
+
+        // Create a panel to display the information and picture
+        JPanel aboutUsPanel = new JPanel(new BorderLayout());
+        JLabel nameLabel = new JLabel(personName);
+        JLabel infoLabel = new JLabel(personInfo);
+        JLabel imageLabel = new JLabel(personImage);
+
+
+        aboutUsPanel.add(nameLabel, BorderLayout.NORTH);
+        aboutUsPanel.add(infoLabel, BorderLayout.CENTER);
+        aboutUsPanel.add(imageLabel, BorderLayout.SOUTH);
+
+        // Center window on screen
+        setLocationRelativeTo(null);
+
+        JOptionPane.showMessageDialog(this, aboutUsPanel, "About Us", JOptionPane.INFORMATION_MESSAGE);
+
     }
 
     public static void main(String[] args) {
